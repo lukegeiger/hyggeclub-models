@@ -1,4 +1,17 @@
-export type Article = {
+
+
+  export interface Category {
+    name: string;
+    category_id: string;
+    icon_name: string;
+    subscribed?: boolean; // Optional property to indicate subscription status
+  }
+  
+  export interface ExtendedCategory extends Category {
+    subscribed?: boolean;
+  }
+  
+  export type Article = {
     title: string;
     url: string;
     description: string;
@@ -30,11 +43,13 @@ export type Article = {
     thumbnail_image_url?: string | null; // Allow null if an image URL is not found
   };
   
+  export type MediaType = 'article' | 'video' | 'audio' | 'post' | 'business';
+
   export type ContentDetails = {
       title?: string;
       description?: string;
       tags?: string[];
-      media_type: 'article' | 'video' | 'audio' | 'post' | 'business';
+      media_type: MediaType
       media_url?: string;
       additional_data?: Record<string, any>;
   };
