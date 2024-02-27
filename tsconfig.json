@@ -15,7 +15,8 @@
       "@models/*": ["models/*"],
       "@utils/*": ["utils/*"]
     },
-    "lib": ["ESNext", "DOM"]
+    "lib": ["ESNext", "DOM"],
+    "declaration": true // This line is added to generate declaration files
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
