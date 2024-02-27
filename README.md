@@ -1,0 +1,1 @@
+# hyggeclub-models
