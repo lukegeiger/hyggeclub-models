@@ -10,10 +10,9 @@
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
     "sourceMap": true,
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
-      "@models/*": ["models/*"],
-      "@utils/*": ["utils/*"]
+      "@hyggeclub/models/*": ["src/*"]
     },
     "lib": ["ESNext", "DOM"],
     "declaration": true // This line is added to generate declaration files
