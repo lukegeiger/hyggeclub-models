@@ -30,6 +30,7 @@
     hygge_description: string;
     tags: string[];
     hygge_score: number;
+    reason_for_score: string;
 };
 
   export type ScoredArticle = {
