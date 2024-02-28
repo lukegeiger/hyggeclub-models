@@ -25,6 +25,7 @@ export type HyggeArticle = Article & {
     hygge_description: string;
     tags: string[];
     hygge_score: number;
+    reason_for_score: string;
 };
 export type ScoredArticle = {
     title: string;
