@@ -27,20 +27,8 @@ export type HyggeArticle = Article & {
     hygge_score: number;
     reason_for_score: string;
 };
-export type ScoredArticle = {
-    title: string;
-    url: string;
-    description: string;
-    author: string;
-    date: string;
-    unix_date: number;
-    source_id: string;
-    category_id: string;
+export type ScoredArticle = HyggeArticle & {
     personal_score: number;
-    original_url: string;
-    id: string;
-    image_url: string | null;
-    thumbnail_image_url?: string | null;
 };
 export type MediaType = 'article' | 'video' | 'audio' | 'post' | 'business';
 export type ContentDetails = {
