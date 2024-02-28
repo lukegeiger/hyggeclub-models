@@ -15,12 +15,16 @@ export type Article = {
     date: string;
     unix_date: number;
     source_id: string;
-    tags: string[];
     category_id: string;
     original_url: string;
     id: string;
     image_url: string | null;
     thumbnail_image_url?: string | null;
+};
+export type HyggeArticle = Article & {
+    hygge_description: string;
+    tags: string[];
+    hygge_score: number;
 };
 export type ScoredArticle = {
     title: string;
