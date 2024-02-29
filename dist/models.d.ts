@@ -29,6 +29,7 @@ export type HyggeArticle = Article & {
 };
 export type ScoredArticle = HyggeArticle & {
     personal_score: number;
+    final_score: number;
 };
 export type MediaType = 'article' | 'video' | 'audio' | 'post' | 'business';
 export type ContentDetails = {
