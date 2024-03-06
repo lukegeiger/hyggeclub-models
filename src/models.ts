@@ -11,12 +11,12 @@
     subscribed?: boolean;
   }
   
-  interface ConversationMessage {
+  export interface ConversationMessage {
     role: 'user' | 'system' | 'assistant';
     content: string;
   }
 
-interface ArticleData {
+export interface ArticleData {
     id: string;
     title: string;
     description: string;
@@ -25,7 +25,7 @@ interface ArticleData {
     excerpt: string | null;
   }
   
-  interface ProcessedArticleData extends ArticleData {
+  export interface ProcessedArticleData extends ArticleData {
     tags: string[];
     hygge_score: number;
     improved_description: string;
@@ -33,7 +33,7 @@ interface ArticleData {
     original_description: string;
     eta_to_read: number;
   }
-  
+
   export type Article = {
     title: string;
     url: string;
