@@ -11,6 +11,29 @@
     subscribed?: boolean;
   }
   
+  interface ConversationMessage {
+    role: 'user' | 'system' | 'assistant';
+    content: string;
+  }
+
+interface ArticleData {
+    id: string;
+    title: string;
+    description: string;
+    word_count: number | null;
+    author: string | null;
+    excerpt: string | null;
+  }
+  
+  interface ProcessedArticleData extends ArticleData {
+    tags: string[];
+    hygge_score: number;
+    improved_description: string;
+    reason: string;
+    original_description: string;
+    eta_to_read: number;
+  }
+  
   export type Article = {
     title: string;
     url: string;
