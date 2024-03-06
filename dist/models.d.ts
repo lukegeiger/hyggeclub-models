@@ -34,7 +34,6 @@ export type Article = {
     author: string;
     date: string;
     unix_date: number;
-    source_id: string;
     category_id: string;
     original_url: string;
     id: string;
@@ -46,6 +45,9 @@ export type Article = {
     word_count: number | null;
     domain: string | null;
     exerpt: string | null;
+    source_id: string;
+    news_source_name: string;
+    news_source_logo_url: string;
 };
 export interface NewsSource {
     link: string;
