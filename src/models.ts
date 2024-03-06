@@ -55,6 +55,14 @@ export interface ArticleData {
     exerpt: string | null;
   };
   
+  export interface NewsSource {
+    link: string;
+    category_id: string;
+    source_id: string;
+    name: string;
+    logo_url: string;
+  }
+  
   export type HyggeArticle = Article & {
     hygge_description: string;
     tags: string[];
