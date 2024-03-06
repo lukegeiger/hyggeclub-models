@@ -28,6 +28,7 @@
     date_published: string | null;
     scraped_author: string | null;
     word_count: number | null;
+    domain: number | null;
   };
   
   export type HyggeArticle = Article & {
