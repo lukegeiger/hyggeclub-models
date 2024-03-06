@@ -25,6 +25,7 @@ export type Article = {
     scraped_author: string | null;
     word_count: number | null;
     domain: string | null;
+    exerpt: string | null;
 };
 export type HyggeArticle = Article & {
     hygge_description: string;
