@@ -20,6 +20,10 @@ export type Article = {
     id: string;
     image_url: string | null;
     thumbnail_image_url?: string | null;
+    scraped_text: string | null;
+    date_published: string | null;
+    scraped_author: string | null;
+    word_count: number | null;
 };
 export type HyggeArticle = Article & {
     hygge_description: string;
