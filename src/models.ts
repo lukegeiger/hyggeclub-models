@@ -37,6 +37,7 @@
     tags: string[];
     hygge_score: number;
     reason_for_score: string;
+    eta_to_read: number;
 };
 
 export type ScoredArticle = HyggeArticle & {
