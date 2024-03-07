@@ -61,7 +61,9 @@ export type HyggeArticle = Article & {
 export type ScoredArticle = HyggeArticle & {
     personal_score: number;
     final_score: number;
+    jigsaw_layout: JigsawLayout;
 };
+export type JigsawLayout = 'prominent' | 'average' | 'minor';
 export type MediaType = 'article' | 'video' | 'audio' | 'post' | 'business';
 export type ContentDetails = {
     title?: string;
