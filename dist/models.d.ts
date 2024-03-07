@@ -31,24 +31,19 @@ export type Article = {
     title: string;
     url: string;
     description: string;
-    author: string;
+    authors: string[];
     date: string;
     unix_date: number;
-    category_id: string;
     original_url: string;
     id: string;
     image_url: string | null;
     thumbnail_image_url?: string | null;
     scraped_text: string | null;
     date_published: string | null;
-    scraped_author: string | null;
     word_count: number | null;
     domain: string | null;
-    exerpt: string | null;
-    source_id: string;
-    news_source_name: string;
-    news_source_logo_url: string;
-    news_source_color_hex: string;
+    excerpt: string | null;
+    news_source: NewsSource;
 };
 export interface NewsSource {
     link: string;
