@@ -55,6 +55,7 @@ export interface ArticleData {
     source_id: string;
     news_source_name: string,
     news_source_logo_url: string,
+    news_source_color_hex: string,
   };
   
   export interface NewsSource {
@@ -63,6 +64,7 @@ export interface ArticleData {
     source_id: string;
     name: string;
     logo_url: string;
+    color_hex: string;
   }
 
   export type HyggeArticle = Article & {
