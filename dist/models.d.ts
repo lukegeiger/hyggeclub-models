@@ -16,8 +16,7 @@ export interface ArticleData {
     title: string;
     description: string;
     word_count: number | null;
-    author: string | null;
-    excerpt: string | null;
+    authors: string[] | null;
 }
 export interface ProcessedArticleData extends ArticleData {
     tags: string[];
@@ -34,7 +33,6 @@ export type Article = {
     authors: string[];
     date: string;
     unix_date: number;
-    original_url: string;
     id: string;
     image_url: string | null;
     thumbnail_image_url?: string | null;
