@@ -22,6 +22,7 @@ export interface ContentItem {
     tags?: string[];
     media_type: MediaType;
     additional_data?: Record<string, any>;
+    jigsaw_layout: JigsawLayout | null;
 }
 export type JigsawLayout = 'prominent' | 'average' | 'minor' | null;
 /**
@@ -44,7 +45,6 @@ export interface ArticleContentItem extends ContentItem {
     eta_to_read: number | null;
     personal_score: number | null;
     final_score: number | null;
-    jigsaw_layout: JigsawLayout | null;
 }
 /**
  * Represents the source of a news article.
