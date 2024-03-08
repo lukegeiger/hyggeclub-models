@@ -24,6 +24,7 @@ export interface ContentItem {
   tags?: string[]; // Optional array of tags associated with the content item.
   media_type: MediaType; // The type of media the content item represents.
   additional_data?: Record<string, any>; // Flexible field for additional metadata.
+  jigsaw_layout: JigsawLayout | null;
 }
 
 export type JigsawLayout =  'prominent' | 'average' | 'minor' | null; // Optional layout designation.
@@ -48,7 +49,6 @@ export interface ArticleContentItem extends ContentItem {
   eta_to_read: number | null; // Optional estimated time to read the article.
   personal_score: number | null; // Optional personal score.
   final_score: number | null; // Optional final score after processing.
-  jigsaw_layout: JigsawLayout | null;
 }
 
 /**
