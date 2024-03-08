@@ -26,6 +26,8 @@ export interface ContentItem {
   additional_data?: Record<string, any>; // Flexible field for additional metadata.
 }
 
+export type JigsawLayout =  'prominent' | 'average' | 'minor' | null; // Optional layout designation.
+
 /**
  * Detailed model for articles, extending the base ContentItem.
  */
@@ -45,7 +47,7 @@ export interface ArticleContentItem extends ContentItem {
   eta_to_read: number | null; // Optional estimated time to read the article.
   personal_score: number | null; // Optional personal score.
   final_score: number | null; // Optional final score after processing.
-  jigsaw_layout: 'prominent' | 'average' | 'minor' | null; // Optional layout designation.
+  jigsaw_layout: JigsawLayout | null;
 }
 
 /**
