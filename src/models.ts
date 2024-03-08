@@ -133,3 +133,33 @@ export interface UserFeed {
   next_cursor: string | null; // Cursor for pagination, null if there's no more content.
   has_more: boolean; // Indicates if more content is available beyond the current page.
 }
+
+/**
+ * A map of weights!
+ */
+export type WeightMap = {
+  [key in InteractionType]: number;
+};
+
+/**
+ * A watered down version of a ArticleContentItem instance, meant to be send to be processed by ML
+ */
+export interface PreproccesedArticleData {
+  id: string;
+  title: string;
+  description: string;
+  word_count: number | null;
+  authors: string[] | null;
+}
+
+/**
+ * The model that ML gives back to us, hyrdated with goodies.
+ */
+export interface PostProccessedArticleData extends PreproccesedArticleData {
+  tags: string[];
+  reason: string;
+  improved_description: string;
+  hygge_score: number;
+  original_description: string;
+  eta_to_read: number;
+}
