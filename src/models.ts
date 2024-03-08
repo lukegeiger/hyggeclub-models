@@ -33,6 +33,7 @@ export type JigsawLayout =  'prominent' | 'average' | 'minor' | null; // Optiona
  */
 export interface ArticleContentItem extends ContentItem {
   url: string; // URL to the full article.
+  ingested_date: string; // URL to the full article.
   image_url: string | null; // Optional URL to the main image of the article.
   thumbnail_image_url: string | null; // Optional URL to the thumbnail image.
   authors: string[] | null; // Optional list of authors.
