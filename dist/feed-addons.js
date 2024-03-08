@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getContentItemsByType = exports.isArticleContentItem = void 0;
+exports.getAllArticlesFromFeed = exports.getContentItemsByType = exports.isArticleContentItem = void 0;
 function isArticleContentItem(contentItem) {
     return contentItem.media_type === 'article';
 }
@@ -14,4 +14,5 @@ function getAllArticlesFromFeed(feed) {
         .flatMap(section => section.contentItems) // Flatten all content items from all sections
         .filter(isArticleContentItem); // Filter out only articles using the type guard
 }
+exports.getAllArticlesFromFeed = getAllArticlesFromFeed;
 //# sourceMappingURL=feed-addons.js.map

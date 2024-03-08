@@ -12,7 +12,7 @@ export function getContentItemsByType<T extends ContentItem>(
   }
   
 
-  function getAllArticlesFromFeed(feed: UserFeed): ArticleContentItem[] {
+export function getAllArticlesFromFeed(feed: UserFeed): ArticleContentItem[] {
     return feed.sections
       .flatMap(section => section.contentItems) // Flatten all content items from all sections
       .filter(isArticleContentItem); // Filter out only articles using the type guard
