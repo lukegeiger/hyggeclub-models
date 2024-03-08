@@ -29,6 +29,7 @@ export type JigsawLayout = 'prominent' | 'average' | 'minor' | null;
  */
 export interface ArticleContentItem extends ContentItem {
     url: string;
+    ingested_date: string;
     image_url: string | null;
     thumbnail_image_url: string | null;
     authors: string[] | null;
