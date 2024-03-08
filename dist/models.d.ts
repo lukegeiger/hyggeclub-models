@@ -23,6 +23,7 @@ export interface ContentItem {
     media_type: MediaType;
     additional_data?: Record<string, any>;
 }
+export type JigsawLayout = 'prominent' | 'average' | 'minor' | null;
 /**
  * Detailed model for articles, extending the base ContentItem.
  */
@@ -42,7 +43,7 @@ export interface ArticleContentItem extends ContentItem {
     eta_to_read: number | null;
     personal_score: number | null;
     final_score: number | null;
-    jigsaw_layout: 'prominent' | 'average' | 'minor' | null;
+    jigsaw_layout: JigsawLayout | null;
 }
 /**
  * Represents the source of a news article.
