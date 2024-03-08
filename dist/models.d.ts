@@ -104,6 +104,7 @@ export interface RedisContentItem {
  * Models a section of the user feed, grouping content items by theme or category.
  */
 export interface FeedSection {
+    id: string;
     title: string | null;
     contentItems: ContentItem[];
 }
