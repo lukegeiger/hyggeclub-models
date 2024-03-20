@@ -179,4 +179,5 @@ export interface ArticleCluster {
   articles_data: ArticleContentItem[]; // Details of the content interacted with.
   average_hygge_score: number; // Timestamp of when the interaction occurred.
   news_categories: string[]; // Optional duration of interaction in seconds.
+  score_for_user: number | null;
 }
