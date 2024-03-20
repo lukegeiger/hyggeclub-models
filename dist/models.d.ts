@@ -143,3 +143,15 @@ export interface PostProccessedArticleData extends PreproccesedArticleData {
     original_description: string;
     eta_to_read: number;
 }
+/**
+ * Tracks interactions users have with content items.
+ */
+export interface ArticleCluster {
+    cluster_title: string;
+    cluster_uuid: string;
+    cluster_id: InteractionType;
+    article_uuids: string[];
+    articles_data: ArticleContentItem[];
+    average_hygge_score: number;
+    news_categories: string[];
+}
