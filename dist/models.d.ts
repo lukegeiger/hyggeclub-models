@@ -154,4 +154,5 @@ export interface ArticleCluster {
     articles_data: ArticleContentItem[];
     average_hygge_score: number;
     news_categories: string[];
+    score_for_user: number | null;
 }
