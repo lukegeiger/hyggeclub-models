@@ -38,6 +38,7 @@ export interface ArticleContentItem extends ContentItem {
   image_url: string | null; // Optional URL to the main image of the article.
   thumbnail_image_url: string | null; // Optional URL to the thumbnail image.
   authors: string[] | null; // Optional list of authors.
+  raw_tags: string[]; // Optional list of authors.
   date_published: string | null; // Optional publication date as a string.
   word_count: number | null; // Optional word count of the article.
   domain: string | null; // Optional domain from which the article was sourced.
