@@ -50,6 +50,7 @@ export interface ArticleContentItem extends ContentItem {
   eta_to_read: number | null; // Optional estimated time to read the article.
   personal_score: number | null; // Optional personal score.
   final_score: number | null; // Optional final score after processing.
+  html_content: string;
 }
 
 /**
