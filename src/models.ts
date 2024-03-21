@@ -127,6 +127,7 @@ export interface RedisContentItem {
 export interface FeedSection {
   id: string
   title: string | null; // Title of the section, can be null for sections without titles.
+  section_title_color: string;
   contentItems: ContentItem[]; // Array of various content types within the section.
 }
 
@@ -181,4 +182,5 @@ export interface ArticleCluster {
   average_hygge_score: number; // Timestamp of when the interaction occurred.
   news_categories: string[]; // Optional duration of interaction in seconds.
   score_for_user: number | null;
+  category_counts: { [category_id: string]: number }; // Map of category IDs to their counts
 }
