@@ -107,6 +107,7 @@ export interface RedisContentItem {
 export interface FeedSection {
     id: string;
     title: string | null;
+    section_title_color: string;
     contentItems: ContentItem[];
 }
 /**
@@ -156,4 +157,7 @@ export interface ArticleCluster {
     average_hygge_score: number;
     news_categories: string[];
     score_for_user: number | null;
+    category_counts: {
+        [category_id: string]: number;
+    };
 }
