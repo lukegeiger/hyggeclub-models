@@ -34,6 +34,7 @@ export interface ArticleContentItem extends ContentItem {
     image_url: string | null;
     thumbnail_image_url: string | null;
     authors: string[] | null;
+    raw_tags: string[];
     date_published: string | null;
     word_count: number | null;
     domain: string | null;
