@@ -46,6 +46,7 @@ export interface ArticleContentItem extends ContentItem {
     eta_to_read: number | null;
     personal_score: number | null;
     final_score: number | null;
+    html_content: string;
 }
 /**
  * Represents the source of a news article.
