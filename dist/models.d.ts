@@ -163,3 +163,25 @@ export interface ArticleCluster {
         [category_id: string]: number;
     };
 }
+/**
+ * Movies
+ */
+export interface MovieContentItem extends ContentItem {
+    additional_data: {
+        original_language: string;
+        original_title: string;
+        popularity: number;
+        release_date: string;
+        video: boolean;
+        vote_average: number;
+        vote_count: number;
+        thumbnail_poster_url: string | null;
+        poster_url: string | null;
+        thumbnail_backdrop_url: string | null;
+        backdrop_url: string | null;
+        genres: string;
+    };
+}
+export interface GenreMap {
+    [id: number]: string;
+}
