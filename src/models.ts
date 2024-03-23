@@ -21,6 +21,7 @@ export interface ContentItem {
   title: string; // Title of the content item.
   description: string; // Description or summary of the content item.
   timestamp: Date; // Publication or creation timestamp of the content item.
+  category_id: string;
   tags?: string[]; // Optional array of tags associated with the content item.
   media_type: MediaType; // The type of media the content item represents.
   additional_data?: Record<string, any>; // Flexible field for additional metadata.
@@ -184,4 +185,28 @@ export interface ArticleCluster {
   news_categories: string[]; // Optional duration of interaction in seconds.
   score_for_user: number | null;
   category_counts: { [category_id: string]: number }; // Map of category IDs to their counts
+}
+
+/**
+ * Movies
+ */
+interface MovieContentItem extends ContentItem {
+  additional_data: {
+    original_language: string;
+    original_title: string;
+    popularity: number;
+    release_date: string;
+    video: boolean;
+    vote_average: number;
+    vote_count: number;
+    thumbnail_poster_url: string | null;
+    poster_url: string | null;
+    thumbnail_backdrop_url: string | null;
+    backdrop_url: string | null;
+    genres: string;
+  };
+}
+
+interface GenreMap {
+  [id: number]: string;
 }
