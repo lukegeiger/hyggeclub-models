@@ -190,7 +190,7 @@ export interface ArticleCluster {
 /**
  * Movies
  */
-interface MovieContentItem extends ContentItem {
+export interface MovieContentItem extends ContentItem {
   additional_data: {
     original_language: string;
     original_title: string;
@@ -207,6 +207,6 @@ interface MovieContentItem extends ContentItem {
   };
 }
 
-interface GenreMap {
+export interface GenreMap {
   [id: number]: string;
 }
