@@ -8,10 +8,6 @@ export interface Category {
     subscribed?: boolean;
 }
 /**
- * Defines the media type of content items.
- */
-export type MediaType = 'article' | 'video' | 'audio' | 'post' | 'business' | 'event' | 'update' | 'weather' | 'movie';
-/**
  * The base model for all content items within the system.
  */
 export interface ContentItem {
@@ -20,18 +16,38 @@ export interface ContentItem {
     description: string;
     timestamp: Date;
     category_id: string;
-    tags?: string[];
+    tags: string[];
     media_type: MediaType;
-    additional_data?: Record<string, any>;
     jigsaw_layout: JigsawLayout | null;
+    hygge_score: number | null;
+    personal_score: number | null;
+    final_score: number | null;
+    ingested_date: string;
+    hygge_description: string | null;
+    reason_for_score: string | null;
 }
-export type JigsawLayout = 'prominent' | 'average' | 'minor' | null;
+/**
+ * Movies
+ */
+export interface MovieContentItem extends ContentItem {
+    original_language: string;
+    original_title: string;
+    popularity: number;
+    release_date: string;
+    video: boolean;
+    vote_average: number;
+    vote_count: number;
+    thumbnail_poster_url: string | null;
+    poster_url: string | null;
+    thumbnail_backdrop_url: string | null;
+    backdrop_url: string | null;
+    genres: string;
+}
 /**
  * Detailed model for articles, extending the base ContentItem.
  */
 export interface ArticleContentItem extends ContentItem {
     url: string;
-    ingested_date: string;
     image_url: string | null;
     thumbnail_image_url: string | null;
     authors: string[] | null;
@@ -41,14 +57,14 @@ export interface ArticleContentItem extends ContentItem {
     domain: string | null;
     excerpt: string | null;
     news_source: NewsSource;
-    hygge_description: string | null;
-    hygge_score: number | null;
-    reason_for_score: string | null;
     eta_to_read: number | null;
-    personal_score: number | null;
-    final_score: number | null;
     html_content: string;
 }
+/**
+ * Defines the media type of content items.
+ */
+export type MediaType = 'article' | 'video' | 'audio' | 'post' | 'business' | 'event' | 'update' | 'weather' | 'movie';
+export type JigsawLayout = 'prominent' | 'average' | 'minor' | null;
 /**
  * Represents the source of a news article.
  */
@@ -59,14 +75,6 @@ export interface NewsSource {
     name: string;
     logo_url: string;
     color_hex: string;
-}
-/**
- * Model for event content items, extending the base ContentItem.
- */
-export interface EventContentItem extends ContentItem {
-    location: string;
-    startDate: Date;
-    endDate: Date;
 }
 /**
  * Represents a message in a conversation, could be from a user or the system.
@@ -161,25 +169,6 @@ export interface ArticleCluster {
     score_for_user: number | null;
     category_counts: {
         [category_id: string]: number;
-    };
-}
-/**
- * Movies
- */
-export interface MovieContentItem extends ContentItem {
-    additional_data: {
-        original_language: string;
-        original_title: string;
-        popularity: number;
-        release_date: string;
-        video: boolean;
-        vote_average: number;
-        vote_count: number;
-        thumbnail_poster_url: string | null;
-        poster_url: string | null;
-        thumbnail_backdrop_url: string | null;
-        backdrop_url: string | null;
-        genres: string;
     };
 }
 export interface GenreMap {
