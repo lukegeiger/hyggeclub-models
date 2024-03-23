@@ -1,6 +1,6 @@
 {
   "name": "@hyggeclub/models",
-  "version": "1.0.37",
+  "version": "1.0.38",
   "description": "Shared models for HyggeClub microservices",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
