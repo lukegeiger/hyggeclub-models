@@ -11,7 +11,7 @@ export interface Category {
 /**
  * Defines the media type of content items.
  */
-export type MediaType = 'article' | 'video' | 'audio' | 'post' | 'business' | 'event' | 'update' | 'weather';
+export type MediaType = 'article' | 'video' | 'audio' | 'post' | 'business' | 'event' | 'update' | 'weather' | 'movie';
 
 /**
  * The base model for all content items within the system.
