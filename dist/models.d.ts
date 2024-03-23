@@ -19,6 +19,7 @@ export interface ContentItem {
     title: string;
     description: string;
     timestamp: Date;
+    category_id: string;
     tags?: string[];
     media_type: MediaType;
     additional_data?: Record<string, any>;
