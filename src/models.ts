@@ -9,11 +9,6 @@ export interface Category {
 }
 
 /**
- * Defines the media type of content items.
- */
-export type MediaType = 'article' | 'video' | 'audio' | 'post' | 'business' | 'event' | 'update' | 'weather' | 'movie';
-
-/**
  * The base model for all content items within the system.
  */
 export interface ContentItem {
@@ -22,37 +17,58 @@ export interface ContentItem {
   description: string; // Description or summary of the content item.
   timestamp: Date; // Publication or creation timestamp of the content item.
   category_id: string;
-  tags?: string[]; // Optional array of tags associated with the content item.
+  tags: string[]; // Optional array of tags associated with the content item.
   media_type: MediaType; // The type of media the content item represents.
-  additional_data?: Record<string, any>; // Flexible field for additional metadata.
   jigsaw_layout: JigsawLayout | null;
+  hygge_score: number | null;
+  personal_score: number | null;
+  final_score: number | null;
+  ingested_date: string;
+  hygge_description: string | null;
+  reason_for_score: string | null;
 }
 
-export type JigsawLayout =  'prominent' | 'average' | 'minor' | null; // Optional layout designation.
-
+/**
+ * Movies
+ */
+export interface MovieContentItem extends ContentItem {
+  original_language: string;
+  original_title: string;
+  popularity: number;
+  release_date: string;
+  video: boolean;
+  vote_average: number;
+  vote_count: number;
+  thumbnail_poster_url: string | null;
+  poster_url: string | null;
+  thumbnail_backdrop_url: string | null;
+  backdrop_url: string | null;
+  genres: string;
+}
 /**
  * Detailed model for articles, extending the base ContentItem.
  */
 export interface ArticleContentItem extends ContentItem {
-  url: string; // URL to the full article.
-  ingested_date: string; // URL to the full article.
-  image_url: string | null; // Optional URL to the main image of the article.
-  thumbnail_image_url: string | null; // Optional URL to the thumbnail image.
-  authors: string[] | null; // Optional list of authors.
-  raw_tags: string[]; // Optional list of authors.
-  date_published: string | null; // Optional publication date as a string.
-  word_count: number | null; // Optional word count of the article.
-  domain: string | null; // Optional domain from which the article was sourced.
-  excerpt: string | null; // Optional short excerpt or summary of the article.
-  news_source: NewsSource; // Source information of the news article.
-  hygge_description: string | null; // Optional description for hygge scoring.
-  hygge_score: number | null; // Optional hygge score.
-  reason_for_score: string | null; // Optional reason for the hygge score.
-  eta_to_read: number | null; // Optional estimated time to read the article.
-  personal_score: number | null; // Optional personal score.
-  final_score: number | null; // Optional final score after processing.
+  url: string;
+  image_url: string | null;
+  thumbnail_image_url: string | null;
+  authors: string[] | null;
+  raw_tags: string[];
+  date_published: string | null;
+  word_count: number | null;
+  domain: string | null;
+  excerpt: string | null;
+  news_source: NewsSource;
+  eta_to_read: number | null;
   html_content: string;
 }
+
+/**
+ * Defines the media type of content items.
+ */
+export type MediaType = 'article' | 'video' | 'audio' | 'post' | 'business' | 'event' | 'update' | 'weather' | 'movie';
+
+export type JigsawLayout =  'prominent' | 'average' | 'minor' | null; // Optional layout designation.
 
 /**
  * Represents the source of a news article.
@@ -66,14 +82,6 @@ export interface NewsSource {
   color_hex: string; // Hexadecimal color code associated with the news source.
 }
 
-/**
- * Model for event content items, extending the base ContentItem.
- */
-export interface EventContentItem extends ContentItem {
-  location: string; // Location where the event is happening.
-  startDate: Date; // Start date and time of the event.
-  endDate: Date; // End date and time of the event.
-}
 
 /**
  * Represents a message in a conversation, could be from a user or the system.
@@ -185,26 +193,6 @@ export interface ArticleCluster {
   news_categories: string[]; // Optional duration of interaction in seconds.
   score_for_user: number | null;
   category_counts: { [category_id: string]: number }; // Map of category IDs to their counts
-}
-
-/**
- * Movies
- */
-export interface MovieContentItem extends ContentItem {
-  additional_data: {
-    original_language: string;
-    original_title: string;
-    popularity: number;
-    release_date: string;
-    video: boolean;
-    vote_average: number;
-    vote_count: number;
-    thumbnail_poster_url: string | null;
-    poster_url: string | null;
-    thumbnail_backdrop_url: string | null;
-    backdrop_url: string | null;
-    genres: string;
-  };
 }
 
 export interface GenreMap {
