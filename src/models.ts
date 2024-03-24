@@ -189,6 +189,7 @@ export interface PreProccesedMovieData {
   description: string;
   vote_average: string;
   popularity: string;
+  suggested_category: string;
 }
 
 /**
