@@ -137,7 +137,7 @@ export type WeightMap = {
 /**
  * A watered down version of a ArticleContentItem instance, meant to be send to be processed by ML
  */
-export interface PreproccesedArticleData {
+export interface PreProccesedArticleData {
     id: string;
     title: string;
     description: string;
@@ -147,13 +147,31 @@ export interface PreproccesedArticleData {
 /**
  * The model that ML gives back to us, hyrdated with goodies.
  */
-export interface PostProccessedArticleData extends PreproccesedArticleData {
+export interface PostProccessedArticleData extends PreProccesedArticleData {
     tags: string[];
     reason: string;
     improved_description: string;
     hygge_score: number;
     original_description: string;
     eta_to_read: number;
+}
+/**
+ * A watered down version of a ArticleContentItem instance, meant to be send to be processed by ML
+ */
+export interface PreProccesedMovieData {
+    id: string;
+    title: string;
+    description: string;
+    vote_average: string;
+    popularity: string;
+}
+/**
+ * The model that ML gives back to us, hyrdated with goodies.
+ */
+export interface PostProccessedMovieData extends PreProccesedMovieData {
+    reason_for_score: string;
+    hygge_score: number;
+    short_description: string;
 }
 /**
  * Tracks interactions users have with content items.
