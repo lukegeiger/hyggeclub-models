@@ -189,7 +189,6 @@ export interface PreProccesedMovieData {
   description: string;
   vote_average: string;
   popularity: string;
-  suggested_category: string;
 }
 
 /**
@@ -199,6 +198,7 @@ export interface PostProccessedMovieData extends PreProccesedMovieData {
   reason_for_score: string;
   hygge_score: number;
   short_description: string;
+  suggested_category: string;
 }
 
 /**
