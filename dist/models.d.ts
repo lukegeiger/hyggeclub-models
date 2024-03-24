@@ -164,7 +164,6 @@ export interface PreProccesedMovieData {
     description: string;
     vote_average: string;
     popularity: string;
-    suggested_category: string;
 }
 /**
  * The model that ML gives back to us, hyrdated with goodies.
@@ -173,6 +172,7 @@ export interface PostProccessedMovieData extends PreProccesedMovieData {
     reason_for_score: string;
     hygge_score: number;
     short_description: string;
+    suggested_category: string;
 }
 /**
  * Tracks interactions users have with content items.
