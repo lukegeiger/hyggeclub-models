@@ -42,6 +42,7 @@ export interface MovieContentItem extends ContentItem {
     thumbnail_backdrop_url: string | null;
     backdrop_url: string | null;
     genres: string;
+    main_actors: string[];
 }
 /**
  * Detailed model for articles, extending the base ContentItem.
@@ -164,6 +165,7 @@ export interface PreProccesedMovieData {
     description: string;
     vote_average: string;
     popularity: string;
+    main_actors: string[];
 }
 /**
  * The model that ML gives back to us, hyrdated with goodies.
