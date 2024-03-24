@@ -164,6 +164,7 @@ export interface PreProccesedMovieData {
     description: string;
     vote_average: string;
     popularity: string;
+    suggested_category: string;
 }
 /**
  * The model that ML gives back to us, hyrdated with goodies.
