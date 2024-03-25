@@ -45,6 +45,13 @@ export interface MovieContentItem extends ContentItem {
   backdrop_url: string | null;
   genres: string;
   main_actors: string[];
+
+  posters?: string[];
+  backdrops?: string[];
+  logos?: string[];
+  budget?: number;
+  revenue?: number;
+  director?: string;
 }
 /**
  * Detailed model for articles, extending the base ContentItem.
@@ -191,6 +198,9 @@ export interface PreProccesedMovieData {
   vote_average: string;
   popularity: string;
   main_actors: string[];
+  budget?: number;
+  revenue?: number;
+  director?: string;
 }
 
 /**
