@@ -211,6 +211,8 @@ export interface PostProccessedMovieData extends PreProccesedMovieData {
   hygge_score: number;
   short_description: string;
   suggested_category: string;
+  primary_color_hex: string;
+  secondary_color_hex: string;
 }
 
 /**
