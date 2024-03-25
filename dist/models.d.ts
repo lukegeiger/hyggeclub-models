@@ -49,6 +49,8 @@ export interface MovieContentItem extends ContentItem {
     budget?: number;
     revenue?: number;
     director?: string;
+    primary_color_hex: string;
+    secondary_color_hex: string;
 }
 /**
  * Detailed model for articles, extending the base ContentItem.
