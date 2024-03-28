@@ -197,7 +197,7 @@ export interface ArticleCluster {
     cluster_uuid: string;
     cluster_id: InteractionType;
     article_uuids: string[];
-    articles_data: ArticleContentItem[];
+    articles_data: ContentItem[];
     average_hygge_score: number;
     news_categories: string[];
     score_for_user: number | null;
