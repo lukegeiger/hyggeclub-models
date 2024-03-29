@@ -192,12 +192,10 @@ export interface PostProccessedMovieData extends PreProccesedMovieData {
 /**
  * Tracks interactions users have with content items.
  */
-export interface ArticleCluster {
+export interface FeedCluster {
     cluster_title: string;
     cluster_uuid: string;
-    cluster_id: InteractionType;
-    article_uuids: string[];
-    articles_data: ContentItem[];
+    content_items: ContentItem[];
     average_hygge_score: number;
     news_categories: string[];
     score_for_user: number | null;
@@ -207,4 +205,22 @@ export interface ArticleCluster {
 }
 export interface GenreMap {
     [id: number]: string;
+}
+export interface HyggeClub {
+    club_icon_url: string;
+    club_id: string;
+    club_status: string;
+    general_area: string;
+    cities: string[];
+    latitude: string;
+    longitude: string;
+    name: string;
+    weather_type: string;
+    club_activities_key: string;
+}
+export interface User {
+    firestore_uuid: string;
+    firestore_uid: string;
+    hygge_club_id: string;
+    token: string | undefined;
 }
