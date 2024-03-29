@@ -221,18 +221,36 @@ export interface PostProccessedMovieData extends PreProccesedMovieData {
 /**
  * Tracks interactions users have with content items.
  */
-export interface ArticleCluster {
-  cluster_title: string; // Unique identifier for the interaction.
-  cluster_uuid: string; // Identifier of the user who interacted with the content.
-  cluster_id: InteractionType; // The type of interaction.
-  article_uuids: string[]; // Identifier of the content that was interacted with.
-  articles_data: ContentItem[]; // Details of the content interacted with.
-  average_hygge_score: number; // Timestamp of when the interaction occurred.
-  news_categories: string[]; // Optional duration of interaction in seconds.
+export interface FeedCluster {
+  cluster_title: string; 
+  cluster_uuid: string; 
+  content_items: ContentItem[]; 
+  average_hygge_score: number;
+  news_categories: string[]; 
   score_for_user: number | null;
-  category_counts: { [category_id: string]: number }; // Map of category IDs to their counts
+  category_counts: { [category_id: string]: number }; 
 }
 
 export interface GenreMap {
   [id: number]: string;
+}
+
+export interface HyggeClub {
+  club_icon_url: string;
+  club_id: string;
+  club_status: string;
+  general_area: string;
+  cities: string[];
+  latitude: string;
+  longitude: string;
+  name: string;
+  weather_type: string;
+  club_activities_key: string;
+}
+
+export interface User {
+  firestore_uuid: string; // Renamed to avoid conflict with doc.id
+  firestore_uid: string;
+  hygge_club_id: string;
+  token: string | undefined;
 }
