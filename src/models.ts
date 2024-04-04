@@ -77,7 +77,7 @@ export interface ArticleContentItem extends ContentItem {
 /**
  * Defines the media type of content items.
  */
-export type MediaType = 'article' | 'video' | 'audio' | 'post' | 'business' | 'event' | 'recipe' | 'weather' | 'movie';
+export type MediaType = 'article' | 'video' | 'trip' | 'post' | 'business' | 'event' | 'recipe' | 'weather' | 'movie';
 
 export type JigsawLayout =  'prominent' | 'average' | 'minor' | null; // Optional layout designation.
 
