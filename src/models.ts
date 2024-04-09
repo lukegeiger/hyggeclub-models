@@ -72,6 +72,7 @@ export interface ArticleContentItem extends ContentItem {
   news_source: NewsSource;
   eta_to_read: number | null;
   html_content: string;
+  short_title: string;
 }
 
 /**
