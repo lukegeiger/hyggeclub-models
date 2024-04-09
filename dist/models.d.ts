@@ -164,6 +164,7 @@ export interface PostProccessedArticleData extends PreProccesedArticleData {
     hygge_score: number;
     original_description: string;
     eta_to_read: number;
+    short_title: string;
 }
 /**
  * A watered down version of a ArticleContentItem instance, meant to be send to be processed by ML
