@@ -220,9 +220,29 @@ export interface HyggeClub {
     weather_type: string;
     club_activities_key: string;
 }
+export interface UsernameInfo {
+    uuid: string;
+    user_id: string;
+    username: string;
+    normalized_username: string;
+    application_id: string;
+    reserved: boolean;
+    claimed_user_uuid?: string;
+    created_at: Date;
+    updated_at: Date;
+    display_username: string;
+    status: string;
+}
+export interface ClubInfo {
+    club_id: string;
+    status: string;
+    joined_date: Date;
+}
 export interface User {
-    firestore_uuid: string;
-    firestore_uid: string;
-    hygge_club_id: string;
-    token: string | undefined;
+    username: UsernameInfo;
+    password: string;
+    uuid: string;
+    application_id: string;
+    username_uuid: string;
+    club_info: ClubInfo;
 }
