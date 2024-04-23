@@ -237,17 +237,25 @@ export interface GenreMap {
   [id: number]: string;
 }
 
-export interface HyggeClub {
-  club_icon_url: string;
+export interface CustomSection {
+  keywords: string[];
+  name: string;
+}
+export interface Club {
   club_id: string;
-  club_status: string;
-  general_area: string;
-  cities: string[];
-  latitude: string;
-  longitude: string;
   name: string;
   weather_type: string;
+  club_icon_url: string;
+  club_status: string;
+  latitude: string;
+  longitude: string;
   club_activities_key: string;
+  general_area: string;
+  cities: string[];
+  primary_city: string;
+  keywords: string[];
+  custom_sections: CustomSection[];
+  hygge_count: number;
 }
 
 export interface UsernameInfo {
