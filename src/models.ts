@@ -241,7 +241,7 @@ export interface CustomSection {
   keywords: string[];
   name: string;
 }
-export interface Club {
+export interface HyggeClub {
   club_id: string;
   name: string;
   weather_type: string;
@@ -278,11 +278,12 @@ export interface ClubInfo {
   joined_date: Date;
 }
 
+
 export interface User {
-  username: UsernameInfo;
-  password: string;
-  uuid: string;
-  application_id: string;
   username_uuid: string;
-  club_info: ClubInfo;
+  uuid: string;
+  application_uuid: string;
+  profile_uuid: string;
+  club_status_uuid: string;
+  club_uuid: string;
 }
